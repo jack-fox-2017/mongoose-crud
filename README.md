@@ -7,7 +7,7 @@
     .
     ├── README.md
     ├── controllers
-    │   └── books.js
+    │   └── bookController.js
     │   └── customers.js
     │   └── transactions.js
     ├── routes

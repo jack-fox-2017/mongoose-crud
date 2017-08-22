@@ -12,7 +12,9 @@ mongoose.connect('mongodb://localhost/library2', err => {
 })
     
 const index = require('./routes/index');
-const books = require('./routes/books')
+const books = require('./routes/books');
+const customers = require('./routes/customers')
+const transactions = require('./routes/transactions')
 
 // app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -22,6 +24,8 @@ app.use(cors());
 
 app.use('/', index);
 app.use('/books', books);
+app.use('/customers', customers);
+app.use('/transactions', transactions)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
