@@ -16,8 +16,10 @@ app.get('/', (req, res) => {
 })
 
 const bookRouter = require('./routes/book')
+const customerRouter = require('./routes/customer')
 
 app.use('/books', bookRouter)
+app.use('/customers', customerRouter)
 
 
 

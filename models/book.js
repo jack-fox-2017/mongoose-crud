@@ -8,6 +8,6 @@ const bookSchema = mongoose.Schema({
   stock: Number
 })
 
-const Book = mongoose.model('book', bookSchema)
+const Book = mongoose.model('books', bookSchema)
 
 module.exports = Book
