@@ -11,6 +11,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var books = require('./routes/book')
 var customers = require('./routes/customer')
+var transactions = require('./routes/transaction')
 
 var app = express();
 
@@ -32,6 +33,8 @@ app.use('/api/books', books);
 
 
 app.use('/api/customers', customers)
+
+app.use('/api/transactions', transactions)
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection eror:'));

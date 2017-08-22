@@ -1,7 +1,9 @@
-var models = require('../models/customer')
+var models = require('../models/transaction')
 
 var getAllTransaction = (req, res) => {
   models.find({})
+  .populate('memberid')
+  .populate('booklist')
   .then(data => {
     res.send(data)
   })
