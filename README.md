@@ -152,4 +152,33 @@ routes | HTTP | Description
       Using postman go to url : (DELETE) http://localhost:3000/customers/:id
 
       you can see delete customer by id
+
+
+**11th Step**
+
+      Using postman go to url : (POST) http://localhost:3000/transactions
+
+      input new transactions
+
+      fill on x-www-form-urlencoded key & value
+
+      memberid: based on id - Collections Customer
+      days: num of days
+      out_date: 2017-08-22
+      due_date: 2017-08-20
+      in_date: 2017-08-18
+      fine: num of late borrow
+      booklist: id book 1
+      booklist: id book 2
+
+
+**12 Step**
+
+      Using postman go to url : (GET) http://localhost:3000/transactions
+
+      you can see all transactions with list of book at booklist
+      
+      Using postman go to url : (GET) http://localhost:3000/transactions/:id
+
+      you can see detail transactions by id
       
