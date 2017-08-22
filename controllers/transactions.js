@@ -33,24 +33,8 @@ var createTransaction = (req, res)=>{
   });
 }
 
-var updateTransaction = (req, res)=>{
-  transModel.findByIdAndUpdate(req.params.id, req.body, (err, result)=>{
-    if(err) res.send(err);
-    else res.send(result);
-  });
-}
-
-var removeTransaction = (req, res)=>{
-  transModel.findByIdAndRemove(req.params.id, (err, result)=>{
-    if(err) res.send(err);
-    else res.send(result);
-  });
-}
-
 module.exports = {
   getTransactions,
   getTransaction,
-  createTransaction,
-  updateTransaction,
-  removeTransaction
+  createTransaction
 }
