@@ -8,6 +8,7 @@ mongoose.connect('mongodb://localhost/library', (err) => {
 var index = require('./routes/index');
 var book = require('./routes/book');
 var customer = require('./routes/customer');
+var transaction = require('./routes/transaction');
 
 var app = express();
 
@@ -21,6 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/', index);
 app.use('/books', book);
 app.use('/customers', customer);
+app.use('/transactions', transaction);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
