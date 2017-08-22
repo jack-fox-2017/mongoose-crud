@@ -11,6 +11,7 @@ module.exports = {
 
   findOne: (req, res) => {
     Transaction.find({[req.params.key]: req.params.value})
+    .populate('memberId bookList')
     .then(result => res.send(result))
     .catch(err => res.send(err))
   },
