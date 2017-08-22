@@ -12,9 +12,12 @@ mongoose.connect('mongodb://localhost/library', (err)=>{
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
+const customerRouter = require("./routers/customerRouter")
 const bookRouter = require("./routers/bookRouter")
 
-app.use('/', bookRouter)
+app.use('/book', bookRouter)
+app.use('/customer', customerRouter)
+
 
 
 app.listen(3000)

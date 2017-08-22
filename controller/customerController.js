@@ -1,8 +1,8 @@
 const ObjectId = require("mongodb").ObjectId
-const modelBook = require("../models/book")
+const modelCustomer = require("../models/customer")
 
 const getAll = (req, res)=>{
- modelBook.find()
+ modelCustomer.find()
  .then(rows=>{
    res.send(rows)
  })
@@ -12,12 +12,12 @@ const getAll = (req, res)=>{
 }
 
 const insert = (req, res)=>{
-  modelBook.create({
-    isbn : req.body.isbn,
-    title : req.body.title,
-    author : req.body.author,
-    category : req.body.category,
-    stock : req.body.stock
+  modelCustomer.create({
+    name : req.body.name,
+    memberid : req.body.memberid,
+    address : req.body.address,
+    zipcode : req.body.zipcode,
+    phone : req.body.phone
   }).then(()=>{
     res.send("Berhasil menambahkan")
   })
@@ -27,7 +27,7 @@ const insert = (req, res)=>{
 }
 
 const remove = (req, res)=>{
-  modelBook.remove({_id: ObjectId(req.params.id)})
+  modelCustomer.remove({_id: ObjectId(req.params.id)})
   .then(()=>{
     res.send("Berhasil menghapus")
   }).catch(err=>{
@@ -36,12 +36,12 @@ const remove = (req, res)=>{
 }
 
 const edit = (req, res)=>{
-  modelBook.update({_id: ObjectId(req.params.id)},{
-    isbn : req.body.isbn,
-    title : req.body.title,
-    author : req.body.author,
-    category : req.body.category,
-    stock : req.body.stock
+  modelCustomer.update({_id: ObjectId(req.params.id)},{
+    name : req.body.name,
+    memberid : req.body.memberid,
+    address : req.body.address,
+    zipcode : req.body.zipcode,
+    phone : req.body.phone
   })
   .then(()=>{
     res.send("Berhasil edit")
