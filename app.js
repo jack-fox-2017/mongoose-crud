@@ -14,9 +14,13 @@ app.use(bodyParser.json())
 
 const customerRouter = require("./routers/customerRouter")
 const bookRouter = require("./routers/bookRouter")
+const transactionRouter = require("./routers/transactionRouter")
+
 
 app.use('/book', bookRouter)
 app.use('/customer', customerRouter)
+app.use('/transaction', transactionRouter)
+
 
 
 

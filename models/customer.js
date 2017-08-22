@@ -6,7 +6,7 @@ const customersSchema = Schema({
   memberid: String,
   address: String,
   zipcode: String,
-  phone: String,
+  phone: String
 });
 
 const modelCustomers = mongoose.model('customers', customersSchema);
