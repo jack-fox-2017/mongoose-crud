@@ -21,8 +21,9 @@ var customerSchema = new Schema({
   versionKey: false
 })
 
-var transactionSchema = new Schema(memberid: {
-    type: schema.Types.ObjectId,
+var transactionSchema = new Schema({
+  memberid: {
+    type: Schema.Types.ObjectId,
     ref: 'Customer'
   },
   days: Number,
@@ -31,7 +32,7 @@ var transactionSchema = new Schema(memberid: {
   in_date: Date,
   fine: Number,
   booklist: [{
-    type: schema.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: 'Book'
   }] 
 }, {
