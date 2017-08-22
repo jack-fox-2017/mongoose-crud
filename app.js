@@ -9,7 +9,7 @@ var mongoose = require('mongoose');
 var index = require('./routes/index');
 var books = require('./routes/book');
 var customers = require('./routes/customer');
-// var transactions = require('./routes/transaction');
+var transactions = require('./routes/transaction');
 
 var app = express();
 
@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/api', books);
 app.use('/api', customers);
-// app.use('/api/transactions', transactions);
+app.use('/api', transactions);
 
 // catch 404 and forward to error handler
 

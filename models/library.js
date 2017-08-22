@@ -13,7 +13,7 @@ var bookSchema = new Schema({
 
 var customerSchema = new Schema({
   name: String,
-  memberid:String,
+  memberId:String,
   address: String,
   zipcode: String,
   phone: String 
@@ -22,7 +22,7 @@ var customerSchema = new Schema({
 })
 
 var transactionSchema = new Schema({
-  memberid: {
+  memberId: {
     type: Schema.Types.ObjectId,
     ref: 'Customer'
   },
