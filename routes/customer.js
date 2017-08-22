@@ -5,8 +5,8 @@ var customerControl = require('../controllers/customersControllers')
 /* GET users listing. */
 router.get('/', customerControl.getAllCustomer)
 router.post('/', customerControl.insertData)
-// router.get('/:id', customerControl.getOneBook)
-// // router.post('/:id', customerControl.updateBook)
+router.get('/:id', customerControl.getOneCustomer)
+router.put('/:id', customerControl.updateCustomer)
 // router.put('/:id', customerControl.updateBook)
-// router.delete('/:id', customerControl.deleteBook)
+router.delete('/:id', customerControl.deleteCustomer)
 module.exports = router;

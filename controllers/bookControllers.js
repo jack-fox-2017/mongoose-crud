@@ -26,6 +26,8 @@ var insertData = (req, res) => {
   })
 }
 
+// var delete
+
 
 module.exports = {
   insertData,

@@ -1,5 +1,7 @@
 var models = require('../models/transaction')
 
+//transaction sudah selesai
+
 var getAllTransaction = (req, res) => {
   models.find({})
   .populate('memberid')
