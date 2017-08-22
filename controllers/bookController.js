@@ -13,8 +13,16 @@ let addBook = (req, res) => {
   })
 }
 
+let getAll = (req, res) => {
+  Book.find((err, book) => {
+    if(err) throw res.status(500).send(err)
+    res.send(book)
+  })
+}
+
 
 
 module.exports = {
-  addBook
+  addBook,
+  getAll
 };
