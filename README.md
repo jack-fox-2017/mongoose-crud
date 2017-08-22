@@ -18,7 +18,7 @@ Route | HTTP | Description
 `/api/customers/:id` | DELETE | Delete a customer
 `/api/customers/:id` | PUT | Update a customer with new info
 `/api/customers/:id` | PATCH | Update a customer with a specific info
-`/api/transaction` | POST | Create a transaction
+`/api/transactions` | POST | Create a transaction
 `/api/transactions` | GET | Get all the transactions
 `/api/transactions/:id` | GET | Get a single transaction
 
