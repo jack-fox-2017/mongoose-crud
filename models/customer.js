@@ -11,6 +11,4 @@ var customerSchema = new schema({
 
 var Customer = mongoose.model('Customer', customerSchema);
 
-module.exports = {
-  Customer
-};
+module.exports = Customer

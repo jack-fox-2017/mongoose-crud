@@ -13,6 +13,4 @@ var transactionSchema = new schema({
 
 var Transaction = mongoose.model('Transaction', bookSchema);
 
-module.exports = {
-  Transaction
-};
+module.exports = Transaction

@@ -11,6 +11,4 @@ var bookSchema = new schema({
 
 var Book = mongoose.model('Book', bookSchema);
 
-module.exports = {
-  Book
-};
+module.exports = Book;

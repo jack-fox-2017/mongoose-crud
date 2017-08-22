@@ -9,6 +9,8 @@ mongoose.connect('mongodb://localhost/library')
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var books = require('./routes/book')
+var customers = require('./routes/customer')
 
 var app = express();
 
@@ -26,6 +28,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/api/books', books);
+
+
+app.use('/api/customers', customers)
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection eror:'));
