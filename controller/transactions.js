@@ -1,7 +1,9 @@
 const modelTransaction = require('../model/transaction')
 
 var getAllData = (req, res)=>{
-  Transaction.find()
+  modelTransaction.find()
+  .populate({path:'memberid', select:"memberid"})
+  .populate({path:"booklist", select:"_id"})
   .then((data)=>{
     res.send(data)
   })
@@ -10,16 +12,25 @@ var getAllData = (req, res)=>{
   })
 }
 
-var deleteData = (req, res)=>{
-  modelTransaction.findByIdAndRemove({_id:req.params.id})
+var insertData = (req, res)=>{
+  modelTransaction.create({
+    memberid: req.body.memberid,
+    days: req.body.days,
+    out_date: new Date(),
+    due_date: new Date(),
+    in_date : new Date(),
+    fine: req.body.fine,
+    booklist: req.body.booklist
+  })
   .then(()=>{
-    res.send("Delete success")
+    res.send("Transaction create")
   })
   .catch(err=>{
     res.send(err)
   })
 }
 
+
 module.exports = {
-  getAllData, deleteData
+  getAllData, insertData
 }

@@ -4,9 +4,6 @@ const router = express.Router()
 const controller = require('../controller/transactions')
 
 router.get('/', controller.getAllData)
-// router.post('/', controller.insertData)
-// router.get('/:id', controller.findId)
-// router.put('/:id', controller.updateData)
-router.delete('/:id', controller.deleteData)
+router.post('/', controller.insertData)
 
 module.exports = router

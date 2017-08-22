@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var transSchema = new Schema({
-  memberid : [{type: Schema.Types.ObjectId, ref: 'customer'}],
+  memberid : {type: Schema.Types.ObjectId, ref: 'customer'},
   days:Number,
   out_date: Date,
   due_date: { type: Date, expires: '7d' },
@@ -14,6 +14,6 @@ var transSchema = new Schema({
 });
 
 // Compile model from schema
-var Transaction = mongoose.model('transaction', transSchema );
+var Transaction = mongoose.model('transactions', transSchema );
 
 module.exports = Transaction
