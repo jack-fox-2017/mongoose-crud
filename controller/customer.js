@@ -26,11 +26,42 @@ var getallcustomer = (req,res) => {
   })
 }
 
+var getonecustomer = (req,res) => {
+  model.find({_id : req.params.id})
+  .then(customer => {
+    res.send(customer)
+  })
+  .catch(err => {
+    res.send(err)
+  })
+}
 
+var updatecustomer = (req,res) => {
+  model.update({_id : req.params.id},{
+    name : req.body.name,
+    memberid : req.body.memberid,
+    address : req.body.address,
+    zipcode : req.body.zipcode,
+    phone : req.body.phone
+  })
+  .then(customer => {
+    res.send(customer)
+  })
+  .catch(err => {
+    res.send(err)
+  })
+}
 
-// var getonebook = (req,res) => {
-//   model.find({username :})
-// }
+var deletecustomer = (req,res) => {
+  model.deleteOne({_id : req.params.id})
+  .then(result => {
+    res.send(result)
+  })
+  .catch(err => {
+    res.send(err)
+  })
+}
+
 
 module.exports = {insertcustomer,
-getallcustomer};
+getallcustomer, getonecustomer, updatecustomer, deletecustomer};
