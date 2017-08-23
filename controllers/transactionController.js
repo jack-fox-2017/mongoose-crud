@@ -25,13 +25,7 @@ module.exports = {
   },
 
   update: (req, res) => {
-    Transaction.update({[req.params.key]: req.params.value}, req.body)
-    .then(result => res.send(result))
-    .catch(err => res.send(err))
-  },
-
-  destroy: (req, res) => {
-    Transaction.deleteOne({[req.params.key]: req.params.value})
+    Transaction.update({[req.params.key]: req.params.value}, {in_date: new Date()})
     .then(result => res.send(result))
     .catch(err => res.send(err))
   }

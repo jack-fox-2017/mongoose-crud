@@ -7,6 +7,5 @@ router.get('/', transactionController.findAll)
 router.get('/:key/:value', transactionController.findOne)
 router.post('/', transactionController.create)
 router.put('/:key/:value', transactionController.update)
-router.delete('/:key/:value', transactionController.destroy)
 
 module.exports = router;
