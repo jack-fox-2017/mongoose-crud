@@ -3,9 +3,11 @@ const Transaction = require('../models/transaction');
 var findAll = (req, res) => {
   Transaction.find({})
   .populate('booklist', 'title author')
+   .populate('memberid')
   // .populate({path: 'memberid', select: 'name'})
 
   .then(result => res.send(result))
+  .catch(err => res.status(500).send(err))
 }
 
 var create = (req, res) => {
