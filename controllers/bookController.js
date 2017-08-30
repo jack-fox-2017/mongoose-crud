@@ -3,6 +3,7 @@
 const Book = require('../models/books')
 // var mongoose = require('mongoose');
 const ObjectId = require('mongodb').ObjectId;
+// http://mongoosejs.com/docs/api.html#model-js
 module.exports = {
   create: function (req,res) {
     Book.create({

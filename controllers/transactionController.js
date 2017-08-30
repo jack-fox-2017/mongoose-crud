@@ -17,7 +17,7 @@ module.exports = {
       out_date: new Date(),
       due_date: addDate(now,req.body.days),
       in_date: null,
-      fine: req.body.fine,
+      fine: null,
       booklist: req.body.booklist
     })
     .then(data => res.send(data))
@@ -41,16 +41,12 @@ module.exports = {
     .catch(err => res.send(err))
   },
   update: function (req,res) {
+    // console.log();
     Transaction.updateOne({_id: ObjectId(`${req.params.id}`)},
         { $set:
           {
-            days : req.body.days,
-            memberid: req.body.memberid,
-            out_date: req.body.out_date,
-            due_date: req.body.due_date,
-            in_date: req.body.in_date,
-            fine: req.body.fine,
-            booklist: req.body.booklist
+            in_date: new Date(),
+            fine: req.body.fine
           }
     })
     // .populate('memberid', 'booklist')

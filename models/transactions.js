@@ -2,6 +2,7 @@
 
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema
+//http://mongoosejs.com/docs/populate.html
 var TransactionSchema = Schema({
     memberid : { type: Schema.Types.ObjectId, ref: 'customers' },
     days: Number,

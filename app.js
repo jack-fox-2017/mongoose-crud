@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/library');
+mongoose.connect('mongodb://renata:12345@atlas-start-shard-00-00-afgyk.mongodb.net:27017,atlas-start-shard-00-01-afgyk.mongodb.net:27017,atlas-start-shard-00-02-afgyk.mongodb.net:27017/test?ssl=true&replicaSet=atlas-start-shard-0&authSource=admin');
 
 // var db = mongoose.connection;
 // db.on('error', console.error.bind(console, 'connection error:'));
