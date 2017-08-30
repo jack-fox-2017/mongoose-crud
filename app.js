@@ -5,13 +5,15 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/library')
+mongoose.connect('mongodb://Ahmad:hacktive@cluster0-shard-00-00-hw4xp.mongodb.net:27017,cluster0-shard-00-01-hw4xp.mongodb.net:27017,cluster0-shard-00-02-hw4xp.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin')
+var cors = require('cors')
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var books = require('./routes/book')
-var customers = require('./routes/customer')
-var transactions = require('./routes/transaction')
+var books = require('./routes/book');
+var bikes = require('./routes/bike')
+var customers = require('./routes/customer');
+var transactions = require('./routes/transaction');
 
 var app = express();
 
@@ -21,6 +23,7 @@ app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(cors())
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -30,17 +33,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/api/books', books);
+app.use('/api/bikes', bikes)
 
 
 app.use('/api/customers', customers)
 
 app.use('/api/transactions', transactions)
 
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection eror:'));
-db.once('open', () => {
-  console.log('This db Connected');
-})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

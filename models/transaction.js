@@ -8,7 +8,7 @@ var transactionSchema = new schema({
   due_date: Date,
   in_date: Date,
   fine: Number,
-  booklist: [{ type: schema.Types.ObjectId, ref: 'Book'}]
+  booklist: [{ type: schema.Types.ObjectId, ref: 'Bike'}]
 });
 
 var Transaction = mongoose.model('Transaction', transactionSchema);
