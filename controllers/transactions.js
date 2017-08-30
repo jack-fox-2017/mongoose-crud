@@ -2,7 +2,7 @@
 const Transaction = require('../models/transaction');
 
 
-const create = (req,res) => {
+exports.create = (req,res) => {
   var set_due_date = new Date();
   set_due_date.setDate(set_due_date.getDate() + req.body.days);
   var set_in_date = new Date();
@@ -27,9 +27,9 @@ const create = (req,res) => {
   })
 }
 
-const readAll = (req,res) =>{
+exports.readAll = (req,res) =>{
   Transaction.find({})
-  .populate('memberid','memberid ')
+  .populate('memberid','name')
   .populate('booklist')
   .then((documents)=>{
     res.send(documents)
@@ -39,7 +39,7 @@ const readAll = (req,res) =>{
   })
 }
 
-const readById = (req,res) => {
+exports.readById = (req,res) => {
   var id = { _id: req.params.id }
   Transaction.find(id)
   .populate('memberid','memberid ')
@@ -52,8 +52,7 @@ const readById = (req,res) => {
   })
 }
 
-module.exports={
-  create,
-  readAll,
-  readById
-}
+// module.exports={
+//   create,
+//   readAll
+// }
