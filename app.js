@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Set up default mongoose connection
 //var mongoDB = 'mongodb://localhost/library';
 
-var mongoDB = 'mongodb://1771911:Alfandiki91!@cluster0-shard-00-00-bqolv.mongodb.net:27017,cluster0-shard-00-01-bqolv.mongodb.net:27017,cluster0-shard-00-02-bqolv.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin'
+var mongoDB = 'mongodb://1771911:alfandiki91@cluster0-shard-00-00-bqolv.mongodb.net:27017,cluster0-shard-00-01-bqolv.mongodb.net:27017,cluster0-shard-00-02-bqolv.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin'
 
 
 mongoose.connect(mongoDB);
