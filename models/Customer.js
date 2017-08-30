@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/library');
+// mongoose.connect('mongodb://localhost/library');
 
 const customerSchema = new mongoose.Schema({
   name: String,

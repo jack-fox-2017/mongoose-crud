@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema
-mongoose.connect('mongodb://localhost/library');
+// mongoose.connect('mongodb://localhost/library');
 
 const transactionSchema = new Schema({
   memberid: {type: Schema.Types.ObjectId, ref: 'customers'},
